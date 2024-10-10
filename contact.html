@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Law Firm</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+    <div id="header">
+        <div class="clearfix">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="LOGO" height="52" width="362"></a>
+            </div>
+            <ul class="navigation">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="practices.html">Practices</a>
+                </li>
+                <li>
+                    <a href="lawyers.html">Our Lawyers</a>
+                </li>
+                <li>
+                    <a href="news.html">News</a>
+                    <div>
+                        <a href="singlepost.html">News Single Post</a>
+                    </div>
+                </li>
+                <li class="active">
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="contents">
+        <div class="clearfix">
+            <div class="sidebar">
+                <div>
+                    <h2>Contact Info</h2>
+                    <ul class="contact">
+                        <li>
+                            <p>
+                                <span class="home"></span> <em>Manes Winchester<br> Family Law Firm</em> New Orleans, Louisiana, USA.
+                            </p>
+                        </li>
+                        <li>
+                            <p class="phone">
+                                Phone: (+20) 222 012 999
+                            </p>
+                        </li>
+                        <li>
+                            <p class="fax">
+                                Fax: (+20) 000 222 988
+                            </p>
+                        </li>
+                        <li>
+                            <p class="mail">
+                                Email: manes@winchester.com
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main">
+                <h1>Contact</h1>
+                <h2>Send Us a Quick Message</h2>
+                <p>
+                    We appreciate your interest in reaching out to us. Please use the form below to send us a quick message, and our dedicated team will get back to you as soon as possible. Whether you have questions, need legal assistance, or simply want to share your concerns, we are here to listen and provide the support you need. Your message is important to us, and we look forward to assisting you in any way we can. Thank you for considering Manes Winchester for your family's law needs.
+                </p>
+                <form action="contact.html" class="message">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" value="" oninput="validateFirstName()" required>
+                    <span id="first-name-error" class="error-message"></span>
+
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" value="" oninput="validateLastName()" required>
+                    <span id="last-name-error" class="error-message"></span>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" value="" oninput="validateEmail()" required>
+                    <span id="email-error" class="error-message"></span>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" oninput="validateMessage()" required></textarea>
+                    <span id="message-error" class="error-message"></span>
+
+                    <input type="submit" value="Send Message" disabled>
+                </form>
+                <script>
+                    function validateFirstName() {
+                        var firstName = document.getElementById("first-name").value;
+                        var namePattern = /^[A-Za-z]+$/;
+                        var firstNameError = document.getElementById("first-name-error");
+                        if (!namePattern.test(firstName)) {
+                            firstNameError.textContent = "First Name should contain only alphabets.";
+                            document.querySelector('input[type="submit"]').disabled = true;
+                        } else {
+                            firstNameError.textContent = "";
+                            document.querySelector('input[type="submit"]').disabled = false;
+                        }
+                    }
+
+                    function validateLastName() {
+                        var lastName = document.getElementById("last-name").value;
+                        var namePattern = /^[A-Za-z]+$/;
+                        var lastNameError = document.getElementById("last-name-error");
+                        if (!namePattern.test(lastName)) {
+                            lastNameError.textContent = "Last Name should contain only alphabets.";
+                            document.querySelector('input[type="submit"]').disabled = true;
+                        } else {
+                            lastNameError.textContent = "";
+                            document.querySelector('input[type="submit"]').disabled = false;
+                        }
+                    }
+
+                    function validateEmail() {
+                        var email = document.getElementById("email").value;
+                        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                        var emailError = document.getElementById("email-error");
+                        if (!emailPattern.test(email)) {
+                            emailError.textContent = "Please enter a valid email address.";
+                            document.querySelector('input[type="submit"]').disabled = true;
+                        } else {
+                            emailError.textContent = "";
+                            document.querySelector('input[type="submit"]').disabled = false;
+                        }
+                    }
+
+                    function validateMessage() {
+                        var message = document.getElementById("message").value;
+                        var messageError = document.getElementById("message-error");
+                        if (message.trim() === "") {
+                            messageError.textContent = "Message is required.";
+                            document.querySelector('input[type="submit"]').disabled = true;
+                        } else {
+                            messageError.textContent = "";
+                            document.querySelector('input[type="submit"]').disabled = false;
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+		<div class="clearfix">
+			<div class="section">
+				<h4>Latest News</h4>
+				<p>
+					The Manes Winchester awarded as the best Family Law Firm in the State. Senior Associate George R. Montgomery awarded with the American Bar Association (ABA) Award.
+				</p>
+			</div>
+			<div class="section contact">
+				<h4>Contact Us</h4>
+				<p>
+					<span>Address:</span> New Orleaans, Louisiana, USA
+				</p>
+				<p>
+					<span>Phone:</span> (+20) 222 012 999
+				</p>
+				<p>
+					<span>Email:</span> manes@winchester.com
+				</p>
+			</div>
+			<div class="section">
+				<h4>SEND US A MESSAGE</h4>
+				<p>
+					All your legal problems can be resolved through us. Your family matters are our family matters. We are just an phone-call or Email away.
+				</p>
+				<a href="contact.html" class="subscribe">Click to send us an email</a>
+			</div>
+		</div>
+		<div id="footnote">
+			<div class="clearfix">
+				<div class="connect">
+					<a href="https://www.facebook.com/" class="facebook"></a><a href="https://twitter.com/" class="twitter"></a><a href="" class="googleplus"></a><a href="https://www.pinterest.com/" class="pinterest"></a>
+				</div>
+				<p>
+					© Copyright 2023 Manes Winchester. All Rights Reserved.
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
